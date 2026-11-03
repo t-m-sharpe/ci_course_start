@@ -57,7 +57,7 @@ def load_measurements(path=None, errors=None):
                     continue
                 try:
                     columns[name].append(float(raw))
-                except Exception:
+                except (ValueError, TypeError):
                     columns[name].append(float("nan"))
                     errors.append(row)
 
